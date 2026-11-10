@@ -1,0 +1,42 @@
+{
+  "name": "@qaassim/instagram-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server for Meta's official Instagram Platform APIs — Instagram API with Instagram Login (graph.instagram.com) and Instagram API with Facebook Login (graph.facebook.com)",
+  "mcpName": "io.github.qaassimq/instagram-mcp-server",
+  "type": "module",
+  "bin": { "instagram-mcp-server": "dist/index.js" },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc",
+    "prepack": "npm run build",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "smoke": "tsx scripts/smoke.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": ["mcp", "model-context-protocol", "instagram", "instagram-graph-api", "meta", "graph-api"],
+  "author": "qaassimq (https://github.com/qaassimq)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qaassimq/instagram-mcp-server.git"
+  },
+  "homepage": "https://github.com/qaassimq/instagram-mcp-server#readme",
+  "bugs": { "url": "https://github.com/qaassimq/instagram-mcp-server/issues" },
+  "publishConfig": { "access": "public" },
+  "engines": { "node": ">=20.3" },
+  "dependencies": {
+    "@modelcontextprotocol/express": "^2.0.2",
+    "@modelcontextprotocol/node": "^2.1.2",
+    "@modelcontextprotocol/server": "^2.4.0",
+    "express": "^5.3.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "^2.4.0",
+    "@types/express": "^5.0.0",
+    "@types/node": "^24.0.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.9.3"
+  }
+}
