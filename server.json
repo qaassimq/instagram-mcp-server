@@ -1,0 +1,60 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.qaassimq/instagram-mcp-server",
+  "title": "Instagram MCP Server",
+  "description": "Instagram via Meta's official Graph API: publishing, comments, DMs, insights and discovery.",
+  "repository": {
+    "url": "https://github.com/qaassimq/instagram-mcp-server",
+    "source": "github",
+    "id": "1453082192"
+  },
+  "version": "1.0.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@qaassim/instagram-mcp-server",
+      "version": "1.0.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "IG_ACCESS_TOKEN",
+          "description": "Long-lived Instagram access token: an IGAA... token on instagram_login, or a long-lived Page or User token with the instagram_* scopes on facebook_login.",
+          "isRequired": true,
+          "isSecret": true,
+          "format": "string"
+        },
+        {
+          "name": "IG_AUTH_MODE",
+          "description": "Which Meta API path to use. instagram_login needs no Facebook Page (37 tools). facebook_login needs a linked Page and adds hashtag search, business discovery, Page listing and media deletion (42 tools).",
+          "format": "string",
+          "default": "instagram_login",
+          "choices": ["instagram_login", "facebook_login"]
+        },
+        {
+          "name": "IG_USER_ID",
+          "description": "Instagram professional account ID. Optional on instagram_login; required on facebook_login (find it with instagram_list_pages).",
+          "format": "string"
+        },
+        {
+          "name": "IG_API_VERSION",
+          "description": "Graph API version to pin.",
+          "format": "string",
+          "default": "v26.0"
+        },
+        {
+          "name": "IG_APP_ID",
+          "description": "Meta app ID. Needed only for instagram_get_token_info and instagram_refresh_token on facebook_login.",
+          "format": "string"
+        },
+        {
+          "name": "IG_APP_SECRET",
+          "description": "Meta app secret. Needed only for instagram_get_token_info and instagram_refresh_token on facebook_login.",
+          "isSecret": true,
+          "format": "string"
+        }
+      ]
+    }
+  ]
+}
